@@ -6,43 +6,30 @@
 /*   By: thmasur <thmasur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 10:08:48 by thmasur           #+#    #+#             */
-/*   Updated: 2024/06/13 12:08:16 by thmasur          ###   ########.fr       */
+/*   Updated: 2024/06/13 12:37:02 by thmasur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-t_list	*ft_lstnew(void *content)
-{
-	t_list	*lst;
-
-	lst = malloc(sizeof(*lst));
-	if (!lst)
-		return ((void *)0);
-	lst->content = content;
-	lst->next = (void *)0;
-	return (lst);
-}
-
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
-{
-	if (!lst || !del)
-		return ;
-	(*del)(lst->content);
-	free(lst);
-}
-
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;
-	t_list	**head;
+	t_list	*nd;
 
-	*head = new_lst;
 	if (!lst || !f || !del)
 		return ((void *)0);
+	new_lst = ((void *)0);
 	while (lst)
 	{
-		new_list
+		nd = ft_lstnew((*f)(lst->content));
+		if (!nd)
+		{
+			ft_lstclear(&new_lst, del);
+			return ((void *)0);
+		}
+		ft_lstadd_back(&new_lst, nd);
+		lst = lst->next;
 	}
-	return (*head);
+	return (new_lst);
 }
