@@ -30,7 +30,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*r;
 
-	if (nmemb > (INT_MAX + 1) / size)
+	if (nmemb > ((INT_MAX / size) + 1))
 		return ((void *)0);
 	r = malloc(nmemb * size);
 	if (!r)
