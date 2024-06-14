@@ -12,6 +12,10 @@
 
 #include "../include/libft.h"
 
+/*
+** char is one byte of size
+*/
+
 void	*ft_memset(void *s, int c, size_t n)
 {
 	void	*r;
