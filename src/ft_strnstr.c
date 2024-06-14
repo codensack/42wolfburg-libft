@@ -12,6 +12,12 @@
 
 #include "../include/libft.h"
 
+/*
+** The strnstr() function locates the first occurrence of the null-termi‐
+** nated string little in the string big, where not more than len characters
+** are searched.
+**
+*/
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;

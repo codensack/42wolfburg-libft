@@ -17,7 +17,7 @@
 ** The  calloc() function allocates memory for an array of nmemb elements of size
 ** bytes each and returns a pointer to the allocated memory.  The memory  is  set
 ** to  zero.  If nmemb or size is 0, then calloc() returns a unique pointer value
-** that can later be successfully passed to free(). -> so malloc does!
+** that can later be successfully passed to free(). -> malloc does so!
 **
 ** If the multiplication of nmemb and size would result in integer overflow, then
 ** calloc()  returns an error.  By contrast, an integer overflow would not be de‐
@@ -30,11 +30,11 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*r;
 
-	if (nmemb > INT_MAX / size)
+	if (nmemb > (INT_MAX + 1) / size)
 		return ((void *)0);
 	r = malloc(nmemb * size);
 	if (!r)
-		return (r);
+		return ((void *)0);
 	ft_bzero(r, nmemb * size);
 	return (r);
 }

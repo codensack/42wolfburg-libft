@@ -13,7 +13,7 @@
 #include "../include/libft.h"
 
 /*
-** char is one byte of size
+** Casting to char * because of void *
 */
 
 void	*ft_memset(void *s, int c, size_t n)
