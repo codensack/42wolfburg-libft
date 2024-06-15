@@ -17,7 +17,7 @@
 NAME	:=	libft.a
 
 # Directories ------------------------------------------------------------------
-SRC_DIR	:=	src/
+SRC_DIR	:=	./
 OBJ_DIR	:=	build/
 
 # Files ------------------------------------------------------------------------
@@ -32,11 +32,11 @@ BONUS	:=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c\
 			ft_lstlast_bonus.c ft_lstadd_back_bonus.c\
 			ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c\
 			ft_lstmap_bonus.c
-OBJ		:=	$(addprefix $(OBJ_DIR), $(FILES:.c=.o))
+OBJ	:=	$(addprefix $(OBJ_DIR), $(FILES:.c=.o))
 OBJ_B	:=	$(addprefix $(OBJ_DIR), $(BONUS:.c=.o))
 
 # Compiler ---------------------------------------------------------------------
-CC			:=	gcc
+CC		:=	gcc
 DEBUG		:=	no
 ifeq ($(DEBUG), yes)
 CFLAG		:=	-g -W
