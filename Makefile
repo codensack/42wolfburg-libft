@@ -32,23 +32,17 @@ BONUS	:=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c\
 			ft_lstlast_bonus.c ft_lstadd_back_bonus.c\
 			ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c\
 			ft_lstmap_bonus.c
-OBJ	:=	$(addprefix $(OBJ_DIR), $(FILES:.c=.o))
+OBJ		:=	$(addprefix $(OBJ_DIR), $(FILES:.c=.o))
 OBJ_B	:=	$(addprefix $(OBJ_DIR), $(BONUS:.c=.o))
 
 # Compiler ---------------------------------------------------------------------
-CC		:=	gcc
+CC			:=	cc
 DEBUG		:=	no
 ifeq ($(DEBUG), yes)
 CFLAG		:=	-g -W
 else
 CFLAG		:=	-Wall -Wextra -Werror
 endif
-
-# Colors -----------------------------------------------------------------------
-DELETE		:= "\033[33m"
-CREATE		:= "\033[32m"
-SUCCESS		:= "\033[30;42m"
-RESET_COLOR	:= "\033[0m"
 
 #===============================================================================
 # Rules ========================================================================
@@ -57,30 +51,26 @@ RESET_COLOR	:= "\033[0m"
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@ar rcs $(NAME) $(OBJ)
-	@echo $(SUCCESS) "LIBFT [create] : $(NAME)" $(RESET_COLOR)
+	ar rcs $(NAME) $(OBJ)
 
-bonus: $(OBJ) $(OBJ_B)
-	@ar rcs $(NAME) $(OBJ) $(OBJ_B)
-	@echo $(SUCCESS) "LIBFT [create] : $(NAME)" $(RESET_COLOR)
+bonus: all $(OBJ_B)
+	ar rcs $(NAME) $(OBJ) $(OBJ_B)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c
-	@mkdir -p $(OBJ_DIR)
-	@gcc $(CFLAG) -c $< -o $@
-	@echo $(CREATE) "LIBFT [create] : $@" $(RESET_COLOR)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c make_build_dir
+	$(CC) $(CFLAG) -c $< -o $@
+
+make_build_dir:
+	mkdir -p $(OBJ_DIR)
 
 # Clean up ---------------------------------------------------------------------
 clean:
-	@rm -rf $(OBJ_DIR)
-	@echo $(DELETE) "LIBFT [clean] : $(OBJ_DIR)*" $(RESET_COLOR)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
-	@rm -f $(NAME)
-	@echo $(DELETE) "LIBFT [delete] : $(NAME)" $(RESET_COLOR)
-	@echo $(DELETE) "LIBFT [delete] : $(OBJ_DIR)*" $(RESET_COLOR)
+	rm -f $(NAME)
 
 # Recompile --------------------------------------------------------------------
 re: fclean all
 
 # PHONY ------------------------------------------------------------------------
-.PHONY: clean, all, fclean, re, bonus
+.PHONY: clean all fclean re bonus make_build_dir
