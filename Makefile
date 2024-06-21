@@ -53,7 +53,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-bonus: all $(OBJ_B)
+bonus: all $(OBJ) $(OBJ_B)
 	ar rcs $(NAME) $(OBJ) $(OBJ_B)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c make_build_dir
