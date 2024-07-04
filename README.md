@@ -89,6 +89,6 @@ Additional functions for list manipulation were also implemented:
 
 # Conclusion
 
-I scored 125/125 points for this project, but this doesn't mean the code is flawless. Please use it with caution!
+I scored 125/100 points for this project, but this doesn't mean the code is flawless. Please use it with caution!
 
 This README provides an overview of the custom library created as part of a project to reimplement standard libc functions and develop additional useful functions. The implemented functions cover a wide range of operations, from basic character checks to complex list manipulations, ensuring a comprehensive and versatile toolset.
