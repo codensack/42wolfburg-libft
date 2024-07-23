@@ -18,7 +18,7 @@ NAME	:=	libft.a
 
 # Directories ------------------------------------------------------------------
 SRC_DIR	:=	./
-OBJ_DIR	:=	build/
+# OBJ_DIR	:=	build/
 
 # Files ------------------------------------------------------------------------
 FILES	:=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c\
@@ -36,7 +36,7 @@ OBJ		:=	$(addprefix $(OBJ_DIR), $(FILES:.c=.o))
 OBJ_B	:=	$(addprefix $(OBJ_DIR), $(BONUS:.c=.o))
 
 # Compiler ---------------------------------------------------------------------
-CC			:=	cc
+CC			:=	clang
 DEBUG		:=	no
 ifeq ($(DEBUG), yes)
 CFLAG		:=	-g -W
@@ -53,18 +53,20 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-bonus: all $(OBJ) $(OBJ_B)
+bonus: $(OBJ) $(OBJ_B)
 	ar rcs $(NAME) $(OBJ) $(OBJ_B)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c make_build_dir
+%.o: $(SRC_DIR)%.c
 	$(CC) $(CFLAG) -c $< -o $@
 
-make_build_dir:
-	mkdir -p $(OBJ_DIR)
+# Rule for tester (https://github.com/alelievr/libft-unit-test)
+so:
+	$(CC) -fPIC $(CFLAGS) $(FILES) $(BONUS)
+	gcc -shared -o libft.so $(OBJ) $(OBJ_B)
 
 # Clean up ---------------------------------------------------------------------
 clean:
-	rm -rf $(OBJ_DIR)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
@@ -73,4 +75,4 @@ fclean: clean
 re: fclean all
 
 # PHONY ------------------------------------------------------------------------
-.PHONY: clean all fclean re bonus make_build_dir
+.PHONY: clean all fclean re bonus so
