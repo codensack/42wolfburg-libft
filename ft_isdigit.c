@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 /*
 ** ft_isdigit - Check if a character is a digit (0-9)
 ** int c	: The character to check.
