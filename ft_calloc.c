@@ -13,18 +13,16 @@
 #include "libft.h"
 
 /*
-** calloc()
-** The  calloc() function allocates memory for an array of nmemb elements of size
-** bytes each and returns a pointer to the allocated memory.  The memory  is  set
-** to  zero.  If nmemb or size is 0, then calloc() returns a unique pointer value
-** that can later be successfully passed to free(). -> malloc does so!
+** ft_calloc - Allocate and zero-initialize array.
+** size_t nmemb	: The number of elements to be allocated.
+** size_t size	: The size of each element.
 **
-** If the multiplication of nmemb and size would result in integer overflow, then
-** calloc()  returns an error.  By contrast, an integer overflow would not be de‐
-** tected in the following call to malloc(), with the result that an  incorrectly
-** sized block of memory would be allocated:
-** malloc(nmemb * size);
-*/
+** DESCRIPTION: This function allocates memory for an array of 'nmemb'
+** elements of 'size' bytes each and initializes all its bits to zero.
+** The memory is dynamically allocated and needs to be freed by the caller.
+**
+** RETURN: A Pointer to the allocated memory or NULL if the allocation fails.
+**/
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
@@ -38,3 +36,26 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(r, nmemb * size);
 	return (r);
 }
+
+/*
+#include <stdio.h>
+
+int main()
+{
+    int num_elements = 5;
+    int *arr;
+	int i = 0;
+
+    arr = (int *)ft_calloc(num_elements, sizeof(int));
+    if (!arr)
+        return (1);
+    printf("Memory allocated by ft_calloc: ");
+	while (i < num_elements)
+        printf("%d", arr[i++]);
+    printf("\n");
+    free(arr);
+    return (0);
+}
+*/
+
+// gcc ft_calloc.c ft_bzero.c ft_memset.c

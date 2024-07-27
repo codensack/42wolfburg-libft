@@ -14,6 +14,19 @@
 
 static int	ft_get_char_count(int n);
 
+/*
+** ft_itoa - Converts an integer to a null-terminated string.
+** int n	: The integer to be converted.
+**
+** DESCRIPTION: This function takes an integer 'n' and converts it to a string
+** representation. Memory for the resulting string is dynamically allocated
+** and needs to be freed by the caller. If the allocation fails, the function
+** returns NULL. The function handles both positive and negative integers.
+**
+** RETURN: A Pointer to the resulting null-terminated string, or NULL if memory
+** allocation fails.
+*/
+
 char	*ft_itoa(int n)
 {
 	char	*r;
@@ -28,7 +41,7 @@ char	*ft_itoa(int n)
 		*(r + --i) = '0';
 	else if (n < 0)
 		*r = '-';
-	while (n != 0)
+	while (n)
 	{
 		if (n < 0)
 			*(r + --i) = -(n % 10) + '0';
@@ -46,10 +59,37 @@ static int	ft_get_char_count(int n)
 	counter = 1;
 	if (n <= 0)
 		counter++;
-	while (n != 0)
+	while (n)
 	{
 		n /= 10;
 		counter++;
 	}
 	return (counter);
 }
+
+/*
+#include <stdio.h>
+
+int main()
+{
+	int	num = -2147483648;
+	char *str;
+
+	printf("The number is %d\n", num);
+	if ((str = ft_itoa(num)))
+	{
+		printf("ft_itoa: %s\n", str);
+		free(str);
+	}
+	num = 2147483647;
+	printf("The number is %d\n", num);
+	if ((str = ft_itoa(num)))
+	{
+		printf("ft_itoa: %s\n", str);
+		free(str);
+	}
+	return (0);
+}
+*/
+
+// gcc  -Werror -Wall -Wextra ft_itoa.c
