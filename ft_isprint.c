@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 /*
-** ft_isprint - Check if a character is a printable ASCII character (32-126)
+** ft_isprint - Check if a character is a printable ASCII character (32-126).
 ** int c	: The character to check.
 **
 ** DESCRIPTION: Determines if the character 'c' is a printable ASCII character,
