@@ -22,6 +22,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!r1)
 		return ((void *)0);
 	ft_strlcpy(r1, s1, ft_strlen(s1) + 1);
-	ft_strlcpy(r1 + ft_strlen(s1) , s2, ft_strlen(s2) + 1);
+	ft_strlcpy(r1 + ft_strlen(s1), s2, ft_strlen(s2) + 1);
 	return (r1);
 }
