@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 /*
-** ft_isascii - Checks if a character is a valid ASCII character (0-127).
+** ft_isascii - Check if a character is a valid ASCII character (0-127).
 ** int c	: The character to check.
 **
 ** DESCRIPTION: Determines if the character 'c' is within the ASCII range
