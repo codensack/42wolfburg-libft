@@ -58,4 +58,4 @@ int main()
 }
 */
 
-// gcc ft_calloc.c ft_bzero.c ft_memset.c
+// gcc -Werror -Wall -Wextra ft_calloc.c ft_bzero.c ft_memset.c

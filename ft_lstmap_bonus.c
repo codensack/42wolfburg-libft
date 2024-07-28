@@ -52,8 +52,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 }
 
 /*
-** We need "modified_content" to make sure we don't lose access to that
-** memory in case "nd = ft_lstnew(modified_content)" fails.
+** We need the variable: "modified_content" to make sure we don't lose
+** access to that memory in case "nd = ft_lstnew(modified_content)" fails.
 ** If we wouldn't use this variable to store the memoryaddress and write
 ** "nd = in ft_lstnew(f(lst->content)" instead, then the address of the
 ** allocated memory is stored nowhere and in error case it is lost and
@@ -104,5 +104,6 @@ int main()
 }
 */
 
-// gcc ft_lstmap_bonus.c ft_lstclear_bonus.c ft_lstadd_back_bonus.c
-// ft_lstnew_bonus.c ft_lstdelone_bonus.c ft_lstlast_bonus.c
+// gcc -Werror -Wall -Wextra ft_lstmap_bonus.c ft_lstclear_bonus.c
+// ft_lstadd_back_bonus.c ft_lstnew_bonus.c ft_lstdelone_bonus.c
+// ft_lstlast_bonus.c

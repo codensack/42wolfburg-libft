@@ -19,8 +19,8 @@
 **							the node.
 **
 ** DESCRIPTION: Deletes the node 'lst' and frees its content using the function
-** 'del'. The memory of 'lst' itself is also freed. Does nothing if 'lst' or
-** 'del' is NULL.
+** 'del'. The memory of 'lst' itself is also freed. Does nothing if 'lst' 
+** is NULL.
 **
 ** RETURN: None
 **/
@@ -70,4 +70,5 @@ int main()
 }
 */
 
-// gcc ft_lstdelone_bonus.c ft_lstnew_bonus.c ft_lstclear_bonus.c
+// gcc -Werror -Wall -Wextra ft_lstdelone_bonus.c ft_lstnew_bonus.c
+// ft_lstclear_bonus.c

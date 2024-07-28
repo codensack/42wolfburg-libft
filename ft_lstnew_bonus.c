@@ -35,31 +35,36 @@ t_list	*ft_lstnew(void *content)
 	return (lst);
 }
 
+/*
 #include <stdio.h>
 
 int main()
 {
-	int value1 = 45;
-	int value2 = 52;
-	int value3 = 78;
+	int value1 = 40;
+	int value2 = 41;
+	int value3 = 42;
 	t_list	*node1 = ft_lstnew(&value1);
 	t_list	*node2 = ft_lstnew(&value2);
 	t_list	*node3 = ft_lstnew(&value3);
 	t_list	*current;
+	t_list	*tmp;
 
 	node1 -> next = node2;
 	node2 -> next = node3;
 	current = node1;
-	while (current != NULL)
+	while (current)
 	{
-		printf("The linked list is %d\n", *(int *)current -> content);
-		current = current -> next;
+		printf("The content of this listnode is %d\n", *(int *)current->content);
+		current = current->next;
 	}
 	current = node1;
-	while (current != NULL)
+	while (current)
 	{
-		t_list *temp = current;
-		current = current -> next;
-		free(temp);
+		tmp = current;
+		current = current->next;
+		free(tmp);
 	}
 }
+*/
+
+// gcc -Werror -Wall -Wextra ft_lstnew_bonus.c

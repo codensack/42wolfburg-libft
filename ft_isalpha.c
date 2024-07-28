@@ -12,7 +12,7 @@
 
 /*
 ** ft_isalpha - Check if a character is alphabetic.
-** int c: The character to be checked.
+** int c	: The character to be checked.
 **
 ** DLSCRIPTION: This function checks if the character 'c' is an alphabetic
 ** letter. An alphabetic letter is defined as either an uppercase letter

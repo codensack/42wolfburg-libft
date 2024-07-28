@@ -14,10 +14,10 @@
 ** ft_isdigit - Check if a character is a digit (0-9)
 ** int c	: The character to check.
 **
-** DESCRIPTION: Determines if the character 'c'\
-** is a digit (0-9) according to the ASCII table.
+** DESCRIPTION: Determines if the character 'c' is a digit (0-9) according to
+** the ASCII table.
 **
-** RETURN: Non-zero if 'c' is a digit, 0 otherwise.
+** RETURN: 1 if 'c' is a digit, 0 otherwise.
 **/
 
 int	ft_isdigit(int c)

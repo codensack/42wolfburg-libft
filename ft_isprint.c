@@ -17,7 +17,7 @@
 ** DESCRIPTION: Determines if the character 'c' is a printable ASCII character,
 ** which includes characters from space (32) to tilde (126) inclusive.
 **
-** RETURN: Non-zero if 'c' is a printable ASCII character, 0 otherwise.
+** RETURN: 1 if 'c' is a printable ASCII character, 0 otherwise.
 */
 
 int	ft_isprint(int c)

@@ -92,4 +92,4 @@ int main()
 }
 */
 
-// gcc  -Werror -Wall -Wextra ft_itoa.c
+// gcc -Werror -Wall -Wextra ft_itoa.c

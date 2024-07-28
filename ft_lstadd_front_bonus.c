@@ -74,5 +74,6 @@ int main()
 }
 */
 
-// gcc ft_lstadd_front_bonus.c ft_lstnew_bonus.c ft_lstclear_bonus.c \
-// ft_lstlast_bonus.c ft_lstdelone_bonus.c ft_strlcpy.c ft_strlen.c
+// gcc -Werror -Wall -Wextra ft_lstadd_front_bonus.c ft_lstnew_bonus.c
+// ft_lstclear_bonus.c ft_lstlast_bonus.c ft_lstdelone_bonus.c ft_strlcpy.c
+// ft_strlen.c

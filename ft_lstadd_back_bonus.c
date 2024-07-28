@@ -45,9 +45,9 @@ int main()
 	t_list	*lst;
 	t_list	*lst_tmp;
 	t_list	*last_node;
-	int		*value1;
+	int	*value1;
 	char	*value2;
-	int		*value3;
+	int	*value3;
 
 	value1 = (int *)malloc(sizeof(int));
 	if (value1 == NULL)
@@ -55,13 +55,11 @@ int main()
 	*value1 = 24;
 	if (!(lst = ft_lstnew(value1)))
 		return (1);
-
 	if (!(value2 = (char *)malloc(6 * sizeof(char))))
 		return (1);
 	ft_strlcpy(value2, "Hallo", 6);
 	if (!(lst->next = ft_lstnew(value2)))
 		return (1);
-
 	if (!(value3 = (int *)malloc(sizeof(int))))
 		return (1);
 	*value3 = 42;
@@ -78,5 +76,6 @@ int main()
 }
 */
 
-// gcc ft_lstadd_back_bonus.c ft_lstnew_bonus.c ft_lstclear_bonus.c
-// ft_lstlast_bonus.c ft_lstdelone_bonus.c ft_strlcpy.c ft_strlen.c
+// gcc -Werror -Wall -Wextra ft_lstadd_back_bonus.c ft_lstnew_bonus.c
+// ft_lstclear_bonus.c ft_lstlast_bonus.c ft_lstdelone_bonus.c ft_strlcpy.c
+// ft_strlen.c
