@@ -12,6 +12,19 @@
 
 #include "libft.h"
 
+/*
+** ft_strmapi - Apply a function to each character of a string.
+** char const *s					: The input string.
+** char (*f)(unsigned int, char)	: The function to apply to each character.
+**
+** DESCRIPTION: Applies the function 'f' to each character of the string 's',
+** passing the character's index as the first argument to 'f', and creates a new
+** string with the results. The new string is dynamically allocated and must be
+** freed by the caller.
+**
+** RETURN: A pointer to the new string, or NULL if memory allocation fails.
+*/
+
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*r1;
@@ -33,3 +46,30 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	*r1 = '\0';
 	return (r2);
 }
+
+/*
+#include <stdio.h>
+
+char	ft_transform(unsigned int i, char c)
+{
+	if (i % 2 == 0)
+		return (ft_toupper(c));
+	else
+		return (ft_tolower(c));
+	return (c);
+}
+
+int main()
+{
+	char original[] = "hello, world!";
+	char *transformed = ft_strmapi(original, ft_transform);
+	if (transformed)
+	{
+		printf("The original string is: %s\n", original);
+		printf("The transformed string: is %s\n", transformed);
+		free(transformed);
+	}
+}
+*/
+
+// gcc -Werror -Wall -Wextra ft_strmapi.c ft_strlen.c ft_toupper.c ft_tolower.c

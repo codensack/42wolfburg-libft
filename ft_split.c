@@ -17,20 +17,20 @@ static char	*ft_get_substrings(char const *s, char c);
 static void	ft_free_substrings(char **substrings);
 static void	*ft_errorhandling(char **substrings);
 
-/**
- * ft_split - A function to split a string into an array of strings.
- * char const *s	: The string to be split.
- * char c			: The delimiter character used to split the string.
- *
- * DESCRIPTION: This function takes a string 's' and a delimiter 'c',
- * and splits 's' into an array of strings, where each element is a
- * substring of 's' that was delimited by one or more occurrences of 'c'.
- * Memory for the array is dynamically allocated and needs to be freed
- * by the caller. If the allocation fails, the function returns NULL.
- *
- * RETURN: a Pointer to the array of split strings, or NULL if memory
- * allocation fails.
- */
+/*
+** ft_split - A function to split a string into an array of strings.
+** char const *s	: The string to be split.
+** char c			: The delimiter character used to split the string.
+**
+** DESCRIPTION: This function takes a string 's' and a delimiter 'c',
+** and splits 's' into an array of strings, where each element is a
+** substring of 's' that was delimited by one or more occurrences of 'c'.
+** Memory for the array is dynamically allocated and needs to be freed
+** by the caller. If the allocation fails, the function returns NULL.
+**
+** RETURN: a Pointer to the array of split strings, or NULL if memory
+** allocation fails.
+*/
 
 char	**ft_split(char const *s, char c)
 {
@@ -200,4 +200,4 @@ int main()
 }
 */
 
-// gcc ft_split.c ft_substr.c ft_strdup.c ft_strlen.c ft_strlcpy.c
+// gcc -Werror -Wall -Wextra ft_split.c ft_substr.c ft_strdup.c ft_strlen.c ft_strlcpy.c
