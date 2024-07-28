@@ -78,5 +78,5 @@ int main()
 }
 */
 
-// cc ft_lstadd_back_bonus.c ft_lstnew_bonus.c ft_lstclear_bonus.c \
+// gcc ft_lstadd_back_bonus.c ft_lstnew_bonus.c ft_lstclear_bonus.c
 // ft_lstlast_bonus.c ft_lstdelone_bonus.c ft_strlcpy.c ft_strlen.c
